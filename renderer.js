@@ -33,15 +33,17 @@ function addTask() {
 
 function deleteTask(button) {
   const li = button.parentElement;
+  const text = li.querySelector("span").innerText;
   const date = li.dataset.date;
 
-  li.remove();
-  saveTasks();
+  let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 
+  tasks = tasks.filter((t) => !(t.text === text && t.date === date));
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  showTasksForDates(date);
   renderCalendar();
-  if (date) {
-    showTasksForDates(date);
-  }
 }
 
 function toggleTask(span) {
@@ -100,6 +102,7 @@ function showTasksForDates(dateStr) {
 
   filtered.forEach((task) => {
     const li = document.createElement("li");
+    li.dataset.date = dateStr;
 
     const span = document.createElement("span");
     span.innerText = task.text;
@@ -160,9 +163,13 @@ function renderCalendar() {
       document
         .querySelectorAll(".day")
         .forEach((d) => d.classList.remove("active-day"));
-      div.classList.add("active-day");
 
+      div.classList.add("active-day");
       selectedDate = dateStr;
+
+      const dateInput = document.getElementById("taskDate");
+      if (dateInput) dateInput.value = dateStr;
+
       showTasksForDates(dateStr);
     };
 
@@ -177,5 +184,17 @@ function nextMonth() {
   currentDate.setMonth(currentDate.getMonth() + 1);
   renderCalendar();
 }
-
 renderCalendar();
+
+const toggleBtn = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+}
+
+toggleBtn.onclick = () => {
+  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+};

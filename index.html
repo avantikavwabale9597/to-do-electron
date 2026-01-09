@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="theme-toggle" id="themeToggle">
+      <div class="toggle-thumb"></div>
+    </div>
+
     <h1>TO-DO LIST</h1>
     <div class="todo-input">
       <input type="text" id="taskInput" placeholder="Enter you task" />
@@ -14,16 +18,17 @@
     <ul id="taskList"></ul>
 
     <h2>Calendar</h2>
-    <div class="calendar">
-      <div class="calendar-header">
-        <button onclick="prevMonth()">Prev</button>
-        <span id="monthYear"></span>
-        <button onclick="nextMonth()">Next</button>
+    <div class="calendar-wrapper">
+      <div class="calendar">
+        <div class="calendar-header">
+          <button onclick="prevMonth()">Prev</button>
+          <span id="monthYear"></span>
+          <button onclick="nextMonth()">Next</button>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
       </div>
-
-      <div class="calendar-grid" id="calendarGrid"></div>
     </div>
-
     <h3 id="selectedDateTitle">Select A date</h3>
     <p>Total tasks: <span id="taskCount">0</span></p>
     <script src="renderer.js"></script>
