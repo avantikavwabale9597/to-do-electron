@@ -62,32 +62,43 @@ li span {
   margin-right: 10px;
 }
 .calendar {
-  width: 400px;
-  margin: 20px auto;
-  background: #faf8d2;
-  border-radius: 12px;
-  padding: 10px;
+  width: fit-content;
+  background: #fff7cc;
+  border-radius: 18px;
+  padding: 16px;
 }
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
   font-weight: bold;
 }
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-top: 10px;
+  grid-template-columns: repeat(7, 42px);
+  gap: 8px;
+  text-align: center;
 }
 .day {
-  padding: 10px;
-  text-align: center;
-  background: #b8b8a9;
-  border-radius: 8px;
+  padding: 8px;
+  border-radius: 10px;
   cursor: pointer;
 }
-.day.has-task {
-  background: #f0efb6;
+.day:hover {
+  background: #ffe58f;
+}
+.has-task {
+  background: #ffd666;
   font-weight: bold;
+}
+
+.active-day {
+  outline: 2px solid #000;
+}
+.taskList li {
+  background: #e6e6d8;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 12px;
 }
