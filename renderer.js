@@ -29,6 +29,7 @@ function addTask() {
 
   renderCalendar();
   showTasksForDates(taskDate);
+  updateMonthStats();
 }
 
 function deleteTask(button) {
@@ -44,6 +45,7 @@ function deleteTask(button) {
 
   showTasksForDates(date);
   renderCalendar();
+  updateMonthStats();
 }
 
 function toggleTask(span) {
@@ -198,3 +200,17 @@ toggleBtn.onclick = () => {
   const isDark = document.body.classList.contains("dark");
   localStorage.setItem("theme", isDark ? "dark" : "light");
 };
+
+function updateMonthStats() {
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+
+  const monthTasks = tasks.filter((t) => t.date.startsWith(`${year}-${month}`));
+
+  const completed = monthTasks.filter((t) => t.completed).length;
+  const remaining = monthTasks.length - completed;
+
+  document.getElementById("remainingCount").innerText = remaining;
+}

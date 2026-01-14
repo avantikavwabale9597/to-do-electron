@@ -175,3 +175,17 @@ body.dark .theme-toggle {
 body.dark .toggle-thumb {
   left: 56px;
 }
+.month-stats {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.month-stats span {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+body.dark .month-stats span {
+  background: rgba(0, 0, 0, 0.25);
+}
