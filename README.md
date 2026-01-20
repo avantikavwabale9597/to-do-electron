@@ -17,7 +17,9 @@ To run This locally on your machine :
 1.Simply install tthe application from the releses the ".exe" file
 ![alt text](image.png)
 ![alt text](image-1.png)
+
 (if some alert appears just click on more info and the click on Run anyway it's not harmful for your device)
+
 Then it will install automatically
 ![alt text](image-2.png)
 
