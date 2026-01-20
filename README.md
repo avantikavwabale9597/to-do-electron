@@ -28,3 +28,21 @@ Then you're good to go to use my application
 
 demo video
 ![Demo vdo](Demo_to-do.mp4)
+
+Why I made it:
+So basically it's my second electron project and i want to make something which is useful for evryone and also to learn more about Electron JS. It's a beginner friendly project so it's very easy project!!
+
+How I made it:
+
+1.Firstly you must need nodejs and npm in your device if not install it according to your needs
+![alt text](image-4.png)
+
+2.then run "npm init -y" to intialise the project
+
+3.As it's electron project run "npm install electron --save-dev" to install electron. (You always need to run this command when you are making new elctron project. Run this in your project folder)
+
+4.You're done here with installations now just make files "index.html, styles.css, renderer.js" These are the main file where you write your code
+
+5.also make "main.js" This is very IMP file as this file loads your electrin window ans also initialise it in your "package.json" file
+
+Now you're done just write your codes in main file and there you go you will make your first desktop app using ElectronJS!!
