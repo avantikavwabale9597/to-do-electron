@@ -1,11 +1,30 @@
 {
-  "name":"electron-todo-app",
-  "version":"1.0.0",
-  "main":"main.js",
-  "scripts":{
-  "start":"electron ."
-},
-"devDependencies":{
-  "electro":"^30.0.0"
-}
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "A desktop to-do app built using Electron.js",
+  "main": "main.js",
+  "type": "commonjs",
+  "author": "Avantika Wabale",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.ava.to-do",
+    "productName": "To-do app by Ava",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
 }
